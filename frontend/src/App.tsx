@@ -4,6 +4,7 @@ import TicketList from './pages/TicketList';
 import TicketForm from './pages/TicketForm';
 import TicketDetail from './pages/TicketDetail';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import { AuthProvider } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/" element={
           <ProtectedRoute>
             <MainLayout />
