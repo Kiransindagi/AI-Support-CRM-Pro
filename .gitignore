@@ -1,0 +1,20 @@
+# Environments
+venv/
+node_modules/
+
+# Caches
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+
+# Local Databases
+*.db
+*.sqlite3
+
+# Env vars
+.env
+
+# OS Files
+.DS_Store
+Thumbs.db
