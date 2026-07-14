@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
 import { CheckCircle2, CircleDashed, LayoutDashboard, TicketIcon } from 'lucide-react';
 import { analyticsApi } from '../api/api';

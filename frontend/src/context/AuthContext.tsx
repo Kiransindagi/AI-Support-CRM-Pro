@@ -35,7 +35,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           });
           setUser(response.data);
           setToken(storedToken);
-        } catch (error) {
+        } catch (_error) {
           localStorage.removeItem('token');
           setToken(null);
           setUser(null);

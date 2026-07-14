@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, PlusCircle, Settings, HeadphonesIcon, LogOut } from 'lucide-react';
 import { cn } from '../utils';
