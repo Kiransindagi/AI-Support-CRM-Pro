@@ -8,5 +8,5 @@ python-dotenv==1.0.1
 ruff==0.5.1
 passlib[bcrypt]==1.7.4
 PyJWT==2.8.0
-python-multipart==0.0.6
+python-multipart==0.0.9
 openai==1.42.0
