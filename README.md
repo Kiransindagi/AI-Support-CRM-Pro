@@ -271,15 +271,22 @@ Environment variables are managed securely using `.env` files.
 
 # Screenshots
 
-Add screenshots here.
+Here is a visual overview of the AI Support CRM Pro in action:
 
-Example:
+### 1. Dashboard & Ticket Management
+![Dashboard](docs/screenshots/dashboard.png)
 
-- Dashboard
-- Create Ticket
-- Ticket Details
-- Analytics Dashboard
-- Login Page
+### 2. Analytics Dashboard
+![Analytics](docs/screenshots/analytics.png)
+
+### 3. Create Ticket (with AI Integration)
+![Create Ticket](docs/screenshots/create_ticket.png)
+
+### 4. Ticket Details & Notes
+![Ticket Details](docs/screenshots/ticket_details.png)
+
+### 5. Secure Login
+![Login](docs/screenshots/login.png)
 
 ---
 
