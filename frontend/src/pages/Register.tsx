@@ -32,7 +32,13 @@ export default function Register() {
         navigate('/login');
       }, 2000);
     } catch (err: any) {
-      setError(err.response?.data?.detail || 'Failed to register. Please try again.');
+      console.error(err);
+
+      if (err.response) {
+        setError(`${err.response.status}: ${JSON.stringify(err.response.data)}`);
+      } else {
+        setError(err.message);
+      }
     } finally {
       setIsLoading(false);
     }
