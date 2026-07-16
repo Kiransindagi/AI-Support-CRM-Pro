@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, PlusCircle, Settings, HeadphonesIcon, LogOut } from 'lucide-react';
+import { LayoutDashboard, PlusCircle, HeadphonesIcon, LogOut } from 'lucide-react';
 import { cn } from '../utils';
 import { useAuth } from '../context/AuthContext';
 
@@ -8,7 +8,6 @@ export default function Sidebar() {
   const links = [
     { name: 'Dashboard', to: '/', icon: LayoutDashboard },
     { name: 'New Ticket', to: '/tickets/new', icon: PlusCircle },
-    { name: 'Settings', to: '/settings', icon: Settings },
   ];
 
   return (
