@@ -16,7 +16,15 @@ async def create_ticket(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    ai_result = await analyze_ticket(ticket_in.subject, ticket_in.description)
+    try:
+        ai_result = await analyze_ticket(ticket_in.subject, ticket_in.description)
+    except Exception as e:
+        print("AI Error:", e)
+        ai_result = {
+            "category": "General",
+            "priority": "Medium",
+            "sentiment": "Neutral"
+        }
     return crud_ticket.create_ticket(db=db, ticket=ticket_in, ai_result=ai_result)
 
 @router.get("/", response_model=List[TicketListResponse])
