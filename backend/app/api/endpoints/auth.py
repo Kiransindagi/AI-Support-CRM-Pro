@@ -14,6 +14,17 @@ router = APIRouter()
 @router.post("/login", response_model=Token)
 def login_access_token(db: Session = Depends(get_db), form_data: OAuth2PasswordRequestForm = Depends()):
     user = db.query(User).filter(User.email == form_data.username).first()
+    print(f"DEBUG LOGIN - Email: {form_data.username}")
+    if user:
+        print(f"DEBUG LOGIN - Found User. Stored hash: {user.hashed_password}")
+        try:
+            is_valid = verify_password(form_data.password, user.hashed_password)
+            print(f"DEBUG LOGIN - Verification result: {is_valid}")
+        except Exception as e:
+            print(f"DEBUG LOGIN - Exception during verification: {e}")
+    else:
+        print("DEBUG LOGIN - User not found in DB.")
+
     if not user or not verify_password(form_data.password, user.hashed_password):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -44,6 +55,9 @@ def register_user(user_in: UserCreate, db: Session = Depends(get_db)):
     db.add(user)
     db.commit()
     db.refresh(user)
+    
+    print(f"DEBUG REGISTER - Created user with hash: {user.hashed_password}")
+    
     return user
 
 @router.get("/me", response_model=UserResponse)

@@ -6,6 +6,7 @@ from app.database import base
 from app.api.router import api_router
 
 app = FastAPI(title=settings.APP_NAME)
+print(f"DEBUG STARTUP - DATABASE_URL: {settings.DATABASE_URL}")
 
 # Create tables
 base.Base.metadata.create_all(bind=engine)
