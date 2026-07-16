@@ -16,10 +16,7 @@ app.add_middleware(
     allow_origins=[
         settings.FRONTEND_URL,
         "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:5174",
-        "http://127.0.0.1:5174",
-        "https://ai-support-crm-pro-qjdp.vercel.app",
+        "https://ai-support-crm-pro.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
